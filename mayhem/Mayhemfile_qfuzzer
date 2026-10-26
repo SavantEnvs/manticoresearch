@@ -1,0 +1,10 @@
+project: savantenvs/manticoresearch
+target: qfuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/qfuzzer/testsuite
+cmds:
+  - cmd: /mayhem/qfuzzer
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/qfuzzer/qfuzzer.dict
+    timeout: 10
